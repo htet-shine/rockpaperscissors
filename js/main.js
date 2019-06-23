@@ -17,7 +17,7 @@ function play(e) {
 	const playerChoice = e.target.id;
 	const cptChoice = getCptChoice();
 	const winner = getWinner(playerChoice, cptChoice);
-	showWinner(winner, cptChoice);	
+	showWinner(winner, cptChoice, playerChoice);	
 }
 
 // Get Computer Choice
@@ -58,37 +58,29 @@ function getWinner(p, c) {
 }
 
 // Show Winner
-function showWinner(winner, cptChoice) {
+function showWinner(winner, cptChoice, playerChoice) {
+
+	const scoreResult = `
+		<i class = "modal-choice fas fa-hand-${playerChoice} fa-10x"></i>
+		<span class="vs">vs</span>
+		<i class = "modal-choice fas fa-hand-${cptChoice} fa-10x"></i>
+		<p>Computer chose <strong>
+			${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
+		</strong></p>
+	`;
+
 	if (winner === 'player') {
 		// Inc player score
 		scoreboard.player++;
 		// Show modal result
-		let res = result.innerHTML = `
-			<h1 class = "text-win">You Win</h1>
-			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
-			<p>Computer chose <strong>
-				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong></p>
-		`;
+		let res = result.innerHTML = `<h1 class = "text-win">You Win</h1>` + scoreResult;
 	} else if (winner === 'computer') {
 		// Inc computer score
 		scoreboard.computer++;
 		// Show modal result
-		let res = result.innerHTML = `
-			<h1 class = "text-lose">You Lose</h1>
-			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
-			<p>Computer chose <strong>
-				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong></p>
-		`;
+		let res = result.innerHTML = `<h1 class = "text-lose">You Lose</h1>` + scoreResult;
 	} else {
-		let res = result.innerHTML = `
-			<h1 class = "text-draw">Its a Draw</h1>
-			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
-			<p>Computer chose <strong>
-				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong></p>
-		`;
+		let res = result.innerHTML = `<h1 class = "text-draw">Its a Draw</h1>` + scoreResult;
 	}
 	// Show Score
 	score.innerHTML = `

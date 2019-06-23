@@ -18,6 +18,8 @@
 	border-radius: .5em;
 	padding: 0 0 1.5rem 0;
 	overflow: hidden;
+}
+.modal-content {
 	animation: modalOpen var(--modal-duration);
 }
 .modal-content h1 {
@@ -33,7 +35,15 @@
 	font-size: 1rem;
 	margin-top: 1rem;
 }
+.modal-choice {
+	position: relative;
+	padding: 1rem;	
+}
+.vs {
+	position: relative;
+	font-size: 1.2rem;
 
+}
 /*Animations*/
 @keyframes modalOpen {
 	from {
@@ -46,13 +56,23 @@
 
 @media (max-width: 500px) {
 	.modal-wrap {
-		width: 250px;
+		width: 100%;
+		height: 100%;
 		background: #fff;
-		margin: 50% auto;
+		margin: auto;
 		text-align: center;
-		border-radius: .5em;
+		border-radius: 0;
 		padding: 0 0 1.5rem 0;
 		overflow: hidden;
+	}
+	.modal-content {
+		width: 300px;
+		margin: 0 auto;
+		margin-top: 50%;
 		animation: modalOpen var(--modal-duration);
 	}
+	.modal-content h1 {
+		border-radius: 50px;
+	}
+
 }
