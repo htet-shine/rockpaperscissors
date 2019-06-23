@@ -39,10 +39,6 @@ body {
 	outline: none;
 	margin-bottom: 1rem;
 }
-.close {
-	display: inline-block;
-	margin: 1rem 0 0 0;
-}
 .restart-btn:hover {
 	background: var(--primary-color);
 	color: #fff;
@@ -116,9 +112,5 @@ body {
 		border-bottom: 1px solid #EDEDED;
 		padding: 1rem 0;
 		font-size: 9rem;
-	}
-	.close {
-		padding: .7rem 4rem;
-		border-radius: 5px;
 	}
 }
