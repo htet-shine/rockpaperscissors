@@ -39,6 +39,10 @@ body {
 	outline: none;
 	margin-bottom: 1rem;
 }
+.close {
+	display: inline-block;
+	margin: 1rem 0 0 0;
+}
 .restart-btn:hover {
 	background: var(--primary-color);
 	color: #fff;
@@ -93,14 +97,23 @@ body {
 		margin: 0 auto;
 		text-align: center;
 		padding: 0 0 2rem 0;
-		/*border: .1rem solid;*/
+		border: none;
+
 		border-color: var(--dark-color);
 	}
 	.choices {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
-		grid-gap: 2rem;
+		grid-gap: 0;
 		margin-top: 2rem;
 		text-align: center;
+	}
+	.choice:first-child {
+		border-top: 1px solid #EDEDED;
+		padding-top: 1rem;
+	}
+	.choice {
+		border-bottom: 1px solid #EDEDED;
+		padding: 1rem 0;
 	}
 }
