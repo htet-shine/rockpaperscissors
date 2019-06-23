@@ -1,2 +1,2 @@
 #RockPaperScissors
-Just a JS practice example.
+#Just a JS practice example.
