@@ -3,6 +3,8 @@ const score = document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
 const modal = document.querySelector('.modal');
+const close = document.getElementById('close');
+
 
 const scoreboard = {
 	player: 0,
@@ -61,31 +63,31 @@ function showWinner(winner, cptChoice) {
 		// Inc player score
 		scoreboard.player++;
 		// Show modal result
-		result.innerHTML = `
+		let res = result.innerHTML = `
 			<h1 class = "text-win">You Win</h1>
 			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
 			<p>Computer chose <strong>
 				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong><p>
+			</strong></p>
 		`;
 	} else if (winner === 'computer') {
 		// Inc computer score
 		scoreboard.computer++;
 		// Show modal result
-		result.innerHTML = `
+		let res = result.innerHTML = `
 			<h1 class = "text-lose">You Lose</h1>
 			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
 			<p>Computer chose <strong>
 				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong><p>
+			</strong></p>
 		`;
 	} else {
-		result.innerHTML = `
+		let res = result.innerHTML = `
 			<h1 class = "text-draw">Its a Draw</h1>
 			<i class = "fas fa-hand-${cptChoice} fa-10x"></i>
 			<p>Computer chose <strong>
 				${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
-			</strong><p>
+			</strong></p>
 		`;
 	}
 	// Show Score
@@ -95,6 +97,8 @@ function showWinner(winner, cptChoice) {
 	`;
 
 	modal.style.display = 'block';
+
+	// console.log(result);
 }
 
 // Restart Game
@@ -109,7 +113,7 @@ function restartGame() {
 
 // Clear Modal
 function clearModal(e) {
-	if (e.target == modal) {
+	if (e.target == modal || e.target == close) {
 		modal.style.display = 'none';
 	}
 }
@@ -117,4 +121,5 @@ function clearModal(e) {
 // Event Listeners
 choices.forEach(choice => choice.addEventListener('click', play));
 window.addEventListener('click', clearModal);
+close.addEventListener('click', clearModal);
 restart.addEventListener('click', restartGame);

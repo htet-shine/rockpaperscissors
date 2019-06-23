@@ -10,7 +10,7 @@
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
 }
-.modal-content {
+.modal-wrap {
 	width: 250px;
 	background: #fff;
 	margin: 10% auto;
@@ -24,6 +24,10 @@
 	margin-bottom: 1rem;
 	padding: .5rem;
 	color: #fff;
+}
+.modal-content h1 > span {
+	font-size: 2rem;
+	float: right;
 }
 .modal-content p {
 	font-size: 1rem;
@@ -41,7 +45,7 @@
 }
 
 @media (max-width: 500px) {
-	.modal-content {
+	.modal-wrap {
 		width: 250px;
 		background: #fff;
 		margin: 50% auto;
