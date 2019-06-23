@@ -64,6 +64,9 @@ function showWinner(winner, cptChoice, playerChoice) {
 		<i class = "modal-choice fas fa-hand-${playerChoice} fa-10x"></i>
 		<span class="vs">vs</span>
 		<i class = "modal-choice fas fa-hand-${cptChoice} fa-10x"></i>
+		<p>You chose <strong>
+			${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}
+		</strong></p>
 		<p>Computer chose <strong>
 			${cptChoice.charAt(0).toUpperCase() + cptChoice.slice(1)}
 		</strong></p>
