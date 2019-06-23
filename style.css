@@ -91,7 +91,7 @@ body {
 	background: #333;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 414px) {
 	.container {
 		width: auto;
 		margin: 0 auto;
@@ -115,5 +115,6 @@ body {
 	.choice {
 		border-bottom: 1px solid #EDEDED;
 		padding: 1rem 0;
+		font-size: 9rem;
 	}
 }
