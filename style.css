@@ -91,7 +91,7 @@ body {
 	background: #333;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 600px) {
 	.container {
 		width: auto;
 		margin: 0 auto;
